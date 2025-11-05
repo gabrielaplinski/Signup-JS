@@ -1,5 +1,84 @@
 @charset "UTF-8";
 
+/*Weights: 400, 500, 600, 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cred: hsl(0, 100%, 74%); 
+    --cgreen: hsl(154, 59%, 51%);
+    --cpurple: hsl(248, 32%, 49%);
+    --cgray: hsl(249, 10%, 26%);
+    --cpurple2: hsl(246, 25%, 77%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: aqua;
-};
+    background: hsla(0, 100%, 74%, 0.555) url(../images/bg-intro-desktop.png) center/cover no-repeat;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+main {
+    min-height: 100vh;
+    padding: 5vw 10vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+section#left {
+    width: 600px;
+}
+
+section#left h1 {
+    font-weight: 700;
+    font-size: 2.1em;
+}
+
+section#left h2 {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+section#right {
+    width: 600px;
+    
+}
+
+.coldir {
+    box-shadow: 0px 3px 1px 0px hsla(249, 10%, 26%, 0.384);
+    border-radius: 5px;
+}
+
+.obs {
+    color: var(--cpurple2);
+}
+
+p#price {
+    background-color: var(--cpurple);
+}
+
+div#signin {
+    background-color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}

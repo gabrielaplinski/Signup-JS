@@ -1,5 +1,5 @@
 @charset "UFT-8";
 
-body {
-    background-color: blueviolet;
+main {
+    flex-wrap: wrap;
 }
