@@ -25,7 +25,7 @@ html, body {
 }
 
 body {
-    background: hsla(0, 100%, 74%, 0.555) url(../images/bg-intro-desktop.png) center/cover no-repeat;
+    background: hsla(0, 100%, 50%, 0.555) url(../images/bg-intro-desktop.png) center/cover no-repeat;
     font-family: 'Poppins', sans-serif;
     color: white;
 }
@@ -46,7 +46,7 @@ section#left {
 
 section#left h1 {
     font-weight: 700;
-    font-size: 2.1em;
+    font-size: 2.8em;
 }
 
 section#left h2 {
@@ -64,16 +64,77 @@ section#right {
     border-radius: 5px;
 }
 
-.obs {
-    color: var(--cpurple2);
-}
-
 p#price {
     background-color: var(--cpurple);
+    padding: 15px;
+    text-align: center;
 }
 
 div#signin {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+input[type="submit"] {
+    color: white;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background-color: var(--cgreen);
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: greenyellow;
+}
+
+.obs {
+    color: var(--cpurple2);
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+a {
+    color: var(--cred);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -81,4 +142,8 @@ footer {
     bottom: 0;
     text-align: center;
     width: 100%;
+}
+
+footer a {
+    color: white;
 }
