@@ -31,13 +31,12 @@ body {
 }
 
 main {
-    min-height: 100vh;
+    height: 100vh;
     padding: 5vw 10vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
 }
 
 section#colone {
@@ -58,12 +57,21 @@ section#colone h2 {
 }
 
 section#coltwo {
-    width: 450px;
+    width: 500px;
+    max-height: 100vh;
+    scrollbar-width: none;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+section#coltwo::-webkit-scrollbar {
+    display: none;
+}
 
 .right {
     box-shadow: 0px 7px 1px 0px hsla(249, 10%, 26%, 0.185);
@@ -78,6 +86,8 @@ p#price {
     text-align: center;
     margin-bottom: 20px;
     font-size: 0.9em;
+
+    transition: transform 0.3s ease;
 }
 
 div#signin {
@@ -88,10 +98,12 @@ div#signin {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    transition: transform 0.3s ease, height 0.3s ease;
 }
 
 #formulario {
-    padding: 25px 0px 30px 0px;
+    padding: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -104,10 +116,6 @@ div#signin {
     margin: 0;
     padding: 7px;
     text-align: right;
-}
-
-#formulario p input {
-    text-align: left;
 }
 
 .sr-only {
@@ -128,6 +136,9 @@ input, textarea {
     border-radius: 5px;
     font-size: 0.8em;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--cgray);
 }
 
 input.sucess {
@@ -136,6 +147,12 @@ input.sucess {
 
 input.error {
     border-color: var(--cred);
+    color: var(--cred);
+}
+
+#signin.error-active,
+#price.error-active {
+    transform: translateY(-15px);
 }
 
 .msg {
@@ -179,7 +196,7 @@ input[type="submit"]:hover {
 .obs {
     color: var(--cpurple2);
     font-weight: 600;
-    text-align: center;
+    text-align: center !important; 
     font-size: 0.6em;
 }
 
@@ -200,6 +217,11 @@ footer {
     width: 100%;
 }
 
+footer p {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.74);
+}
+
 footer a {
-    color: white;
+    color: rgba(255, 255, 255, 0.616);
 }
