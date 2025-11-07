@@ -13,36 +13,41 @@
 
   <main>
 
-    <section id="left">
+    <section id="colone">
       <h1>Learn to code by watching others</h1>
       <h2>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</h2>
     </section>
 
-    <section id="right">
-      <p class="coldir" id="price">Try it free 7 days then $20/mo. thereafter</p>
-      <div class="coldir" id="signin">
-        <form action="cad.js" method="post">
+    <section id="coltwo">
+      <p class="right" id="price"><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+      <div class="right" id="signin">
+        <form action="script/cad.js" method="post" id="formulario">
           <p>
-            <label for="iname"></label>
+            <label for="iname" class="sr-only">Name</label>
             <input type="text" name="name" id="iname" placeholder="First Name" required autocomplete="name">
+            <small class="msg">erro</small>
           </p>
           <p>
-            <label for="ilast"></label>
+            <label for="ilast" class="sr-only">Last name</label>
             <input type="text" name="last" id="ilast" placeholder="Last Name" required autocomplete="family-name">
+            <small class="msg"></small>
           </p>
           <p>
-            <label for="imail"></label>
+            <label for="imail" class="sr-only">Email Address</label>
             <input type="email" name="mail" id="imail" placeholder="Email Address" required autocomplete="email" pattern="^[\w\.-]+@[\w\.-]+\.\w{2,}$" title="Looks like this is not an email">
+            <small class="msg"></small>
           </p>
           <p>
-            <label for="ipass"></label>
+            <label for="ipass" class="sr-only">Password</label>
             <input type="password" name="pass" id="ipass" placeholder="Password" required autocomplete="new-password">
+            <small class="msg"></small>
           </p>
           <p>
             <input type="submit" value="Claim your free trial">
           </p>
+          <p class="obs">By clicking the button, you are agreeing to our <a href="#" target="_blank">Terms and Services</a></p>
         </form>
-        <p class="obs">By clicking the button, you are agreeing to our <a href="#" target="_blank">Terms and Services</a></p>
+        
       </div>
     </section>
 
@@ -54,5 +59,6 @@
       Coded by <a href="#">Gabriela Piovesan Plinski</a>.
     </p>
   </footer>
+  <script src="script/cad.js"></script>
 </body>
 </html>
