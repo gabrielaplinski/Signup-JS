@@ -12,3 +12,7 @@ section#colone {
 section#colone h1 {
     padding-bottom: 20px;
 }
+
+section#colone h2 {
+    padding: 0 30px;
+}
