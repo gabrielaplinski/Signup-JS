@@ -135,11 +135,11 @@ div.actions {
     height: 1px;
     margin: -1px;
     overflow: hidden;
-    clip-path: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     border: 0;
 }
 
-input, textarea {
+input, textarea, button {
     width: 100%;
     padding: 17px;
     margin: 0;
@@ -181,7 +181,7 @@ input::placeholder {
     padding-left: 20px;
 }
 
-input[type="submit"] {
+button {
     color: white;
     border: 0;
     font-family: 'Poppins', sans-serif;
@@ -196,7 +196,7 @@ input[type="submit"] {
     transition: background 0.2s, transform 0.2s;
 }
 
-input[type="submit"]:hover {
+button:hover {
     background-color: hsl(154, 48%, 64%);
     transform: scale(0.99);
 }
