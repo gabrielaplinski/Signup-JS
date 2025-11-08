@@ -18,47 +18,54 @@
     padding: 0;
 }
 
-
 html, body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     background: hsla(0, 100%, 50%, 0.555) url(../images/bg-intro-desktop.png) center/cover no-repeat;
     font-family: 'Poppins', sans-serif;
     color: white;
+    min-height: 100vh;
+    overflow-y: auto;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    height: 100vh;
-    padding: 5vw 10vw;
+    flex: 1;
+    padding: 3vw 10vw;
+    min-height: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2vw;
 }
 
 section#colone {
-    width: 500px;
+    width: clamp(300px, 40vw, 600px);
     padding-right: 50px;
 }
 
 section#colone h1 {
     font-weight: 700;
-    font-size: 2.8em;
-    line-height: 50px;
-    padding-bottom: 25px;
+    font-size: clamp(1.8em, 3.5vw, 3rem);
+    line-height: 1.2;
+    padding-bottom: 1.5vw;
 }
 
 section#colone h2 {
-    font-weight: 500;
-    font-size: 0.8em;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
 }
 
 section#coltwo {
-    width: 500px;
-    max-height: 100vh;
+    width: clamp(300px, 40vw, 500px);
+    max-height: 100%;
     scrollbar-width: none;
     
     display: flex;
@@ -79,10 +86,9 @@ section#coltwo::-webkit-scrollbar {
 }
 
 p#price {
-    align-self: flex-start;
     width: 100%;
     background-color: var(--cpurple);
-    padding: 15px;
+    padding: clamp(23px, 1.5vw, 20px) 40px;
     text-align: center;
     margin-bottom: 20px;
     font-size: 0.9em;
@@ -98,12 +104,13 @@ div#signin {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
 
     transition: transform 0.3s ease, height 0.3s ease;
 }
 
 #formulario {
-    padding: 25px 0px 25px 0px;
+    padding: 25px 0px 10px 0px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -112,10 +119,13 @@ div#signin {
     margin: 0 auto;
 }
 
-#formulario p {
-    margin: 0;
-    padding: 7px;
+#formulario .field {
+    padding: 7px 0px;
     text-align: right;
+}
+
+div.actions {
+    padding-top: 7px;
 }
 
 .sr-only {
@@ -141,7 +151,7 @@ input, textarea {
     color: var(--cgray);
 }
 
-input.sucess {
+input.success {
     border-color: var(--cgreen);
 }
 
@@ -156,15 +166,12 @@ input.error {
 }
 
 .msg {
-    text-transform: ;
     color: var(--cred);
     font-size: 0.5em;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     text-align: right;
     margin-bottom: 10px;
-    height: 1em;
-    padding-top: 5px;
 }
 
 input::placeholder {
@@ -174,7 +181,6 @@ input::placeholder {
 }
 
 input[type="submit"] {
-    padding: 15px;
     color: white;
     border: 0;
     font-family: 'Poppins', sans-serif;
@@ -191,13 +197,15 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: hsl(154, 48%, 64%);
+    transform: scale(0.99);
 }
 
 .obs {
     color: var(--cpurple2);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center !important; 
     font-size: 0.6em;
+    padding: 0 40px 40px 40px;
 }
 
 a {
@@ -211,10 +219,10 @@ a:hover {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     text-align: center;
     width: 100%;
+    padding: 10px;
+    margin-top: 30px;
 }
 
 footer p {

@@ -4,37 +4,44 @@ const messages = form.querySelectorAll('.msg');
 const signin = document.querySelector('#signin');
 const price = document.querySelector('#price');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let valid = true;
+function validarInput(input) {
+    const value = input.value.trim();
+    const message = input.nextElementSibling;
+    let errorMsg = '';
 
-    inputs.forEach((input, index) => {
-        const value = input.value.trim();
-        const message = messages[index];
-        let errorMsg = '';
-
-        if (value === '') {
-            errorMsg = `${input.placeholder} cannot be empty`;
-        }
-        else if (input.type === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+    if (value === '') {
+        errorMsg = `${input.dataset.label || input.placeholder} cannot be empty`;
+    } 
+    else if (input.type === 'email' && !/\S+@\S+\.\S+/.test(value)) {
             errorMsg = "Looks like this is not an email";
-        }
-        if (errorMsg) {
+    }
+
+    if (errorMsg) {
             input.classList.add('error');
             input.classList.remove('success');
             message.textContent = errorMsg;
-            valid = false;
-        }
-        else {
+            return false;
+    }
+    else {
             input.classList.add('success');
             input.classList.remove('error');
-            messages.textContent = '';
-        }
+            message.textContent = '';
+            return true;
+    }
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    inputs.forEach(input => {
+        const isValid = validarInput(input);
+        if (!isValid) valid = false;
     });
 
     if (valid) {
         removerErro();
-        alert('Form submitted');
         form.reset();
         inputs.forEach(input => input.classList.remove('success'));
     } 
@@ -53,11 +60,11 @@ function removerErro() {
     price.classList.remove('error-active');
 }
 
-inputs.forEach((input,index) => {
+inputs.forEach(input => {
     input.addEventListener('input', () => {
         if (input.value.trim() !== '') {
             input.classList.remove('error');
-            messages[index].textContent = '';
+            input.nextElementSibling.textContent = '';
         }
     });
 });

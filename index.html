@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="estilos/mobile.css" media="(max-width: 768px)">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Intro component with sign up form</title>
+  <title>Signup Page | Gabriela Piovesan Plinski</title>
 </head>
 <body>
 
@@ -22,41 +22,39 @@
       <p class="right" id="price"><b>Try it free 7 days</b> then $20/mo. thereafter</p>
       <div class="right" id="signin">
         <form action="script/cad.js" method="post" id="formulario" novalidate>
-          <p>
+          <div class="field">
             <label for="iname" class="sr-only">Name</label>
             <input type="text" name="name" id="iname" placeholder="First Name" autocomplete="name">
             <small class="msg"></small>
-          </p>
-          <p>
+          </div>
+          <div class="field">
             <label for="ilast" class="sr-only">Last name</label>
             <input type="text" name="last" id="ilast" placeholder="Last Name" autocomplete="family-name">
             <small class="msg"></small>
-          </p>
-          <p>
+          </div>
+          <div class="field">
             <label for="imail" class="sr-only">Email Address</label>
             <input type="email" name="mail" id="imail" placeholder="Email Address" autocomplete="email">
             <small class="msg"></small>
-          </p>
-          <p>
+          </div>
+          <div class="field">
             <label for="ipass" class="sr-only">Password</label>
             <input type="password" name="pass" id="ipass" placeholder="Password" autocomplete="new-password">
             <small class="msg"></small>
-          </p>
-          <p>
+          </div>
+          <div class="actions">
             <input type="submit" value="Claim your free trial">
-          </p>
-          <p class="obs">By clicking the button, you are agreeing to our <a href="#" target="_blank">Terms and Services</a></p>
+          </div>
+          
         </form>
-        
+        <p class="obs">By clicking the button, you are agreeing to our <a href="#" target="_blank">Terms and Services</a></p>
       </div>
+      
     </section>
 
   </main>
-  
   <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Gabriela Piovesan Plinski</a>.
+    <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Gabriela Piovesan Plinski</a>.
     </p>
   </footer>
   <script src="script/cad.js"></script>
